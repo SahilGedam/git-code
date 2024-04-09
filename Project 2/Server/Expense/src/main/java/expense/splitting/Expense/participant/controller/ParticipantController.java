@@ -20,6 +20,7 @@ import expense.splitting.Expense.participant.services.ParticipantsService;
 public class ParticipantController {
 	@Autowired
 	ParticipantsService participantService;
+	@PostMapping(value="/createParticipant")
 	public String createParticipant(@RequestBody Participants newParticipant) {
 		return participantService.createParticipant(newParticipant);
 	}

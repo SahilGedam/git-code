@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <span>Expense Splitting App</span> <br />
+
+  <span class="nav-tool-items"> </span>
+
+  <span class="example-spacer"></span>
+
+  <a routerLink="./participants">Participants</a>
+  <span class="example-spacer"></span> <a routerLink="./expense">Expense</a>
+  <br />
+  <span class="example-spacer"></span>
+  <a routerLink="./expense-settlement">Expense Settlement</a>
+  <span class="example-spacer"></span>
+
+  <span class="example-spacer"></span>
+
+  <div class="button">
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon theme-icon"
+      (click)="changeTheme()"
+      aria-label="Example icon-button with heart icon"
+    >
+      <span class="material-icons">{{ matIcon }}</span>
+    </button>
+  </div>
+</mat-toolbar>

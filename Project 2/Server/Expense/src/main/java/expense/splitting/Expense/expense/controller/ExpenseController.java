@@ -16,7 +16,6 @@ import expense.splitting.Expense.expense.services.ExpenseService;
 @RestController
 @RequestMapping(value = "/")
 @CrossOrigin(origins = "http://localhost:4200")
-
 public class ExpenseController {
 	@Autowired
 	ExpenseService expenseService;

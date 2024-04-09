@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="parent">
+      <div class="inner-div">
+        <table mat-table [dataSource]="allParticipants" class="mat-elevation-z8">
+          <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef>User Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="groupName">
+            <th mat-header-cell *matHeaderCellDef>Group</th>
+            <td mat-cell *matCellDef="let element">{{ element.groupName }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef>Expend</th>
+            <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
+          </ng-container>
+          <ng-container matColumnDef="balance">
+            <th mat-header-cell *matHeaderCellDef>Balance Due</th>
+            <td
+              [ngClass]="
+                element.balAmount > 0 ? 'negative-balance' : 'positive-balance'
+              "
+              mat-cell
+              *matCellDef="let element"
+            >
+              {{ element.balAmount }}
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <div class="spacer"></div>
+  
+        <!-- <div>
+          <table mat-table [dataSource]="allGroups" class="mat-elevation-z8">
+            <ng-container matColumnDef="groupName">
+              <th mat-header-cell *matHeaderCellDef>Group Name.</th>
+              <td mat-cell *matCellDef="let element">{{ element.groupName }}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="amount">
+              <th mat-header-cell *matHeaderCellDef>Total Amount</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.totalAmount }}
+              </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="avgAmount">
+              <th mat-header-cell *matHeaderCellDef>Avg Amount</th>
+              <td mat-cell *matCellDef="let element">{{ element.avgAmount }}</td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="groupsDisplayed"></tr>
+            <tr mat-row *matRowDef="let row; columns: groupsDisplayed"></tr>
+          </table>
+        </div> -->
+  
+        <!-- <div>
+          <button mat-raised-button (click)="settleAll()" color="accent">
+            Settle All
+          </button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  
+  <ng-template class="dialog-box" #dialogRef let-mydata>
+    <h3 class="heading">Message</h3>
+    <h4 class="heading">{{ errorMessage }}</h4>
+  
+    <button
+      class="dialog-button"
+      color="primary"
+      mat-button
+      mat-dialog-close="close button"
+    >
+      Close
+    </button>
+  </ng-template>
+  
