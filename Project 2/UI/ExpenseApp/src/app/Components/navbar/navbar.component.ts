@@ -21,16 +21,21 @@ constructor ( private dataService: DataServiceService){
 
 }
   changeTheme() {
+    console.log(this.currentTheme);
+    
     if (this.currentTheme == 'light-theme') {
       this.currentTheme = 'dark-theme';
       this.matIcon = 'wb_sunny';
       document.documentElement.classList.remove('light-theme');
       document.documentElement.classList.add('dark-theme');
+      // console.log(document.documentElement.classList);
+      
     } else if (this.currentTheme == 'dark-theme') {
       this.currentTheme = 'light-theme';
       this.matIcon = 'dark_mode';
       document.documentElement.classList.remove('dark-theme');
       document.documentElement.classList.add('light-theme');
+      // console.log(document.documentElement.classList);
     }
     this.dataService.saveTheme(this.currentTheme);
   }
